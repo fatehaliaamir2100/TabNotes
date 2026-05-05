@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TabNotes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="header">
+      <div class="logo-line">
+        <span class="logo-icon">⚡</span>
+        <h1>TABNOTES</h1>
+        <span class="logo-icon">⚡</span>
+      </div>
+      <p class="tagline">Context Keeper</p>
+    </div>
+
+    <div class="neon-divider"></div>
+
+    <div class="input-wrapper">
+      <label class="input-label" for="note">Session Context</label>
+      <textarea id="note" placeholder="What are you working on right now?"></textarea>
+    </div>
+
+    <div class="input-wrapper">
+      <label class="input-label" for="tags">Tags</label>
+      <input type="text" id="tags" placeholder="work, research, project-x ..." autocomplete="off" />
+    </div>
+
+    <div class="tabs-section">
+      <div class="tabs-section-header">
+        <label class="input-label">Select Tabs</label>
+        <div class="tab-actions">
+          <button class="link-btn" id="selectAll">All</button>
+          <span class="tab-actions-sep">·</span>
+          <button class="link-btn" id="selectNone">None</button>
+        </div>
+      </div>
+      <div id="tabList" class="tab-list"></div>
+    </div>
+
+    <div id="insightsPanel" class="insights-panel"></div>
+
+    <button id="saveBtn">⚡ Save Context</button>
+
+
+    <div class="auto-group-bar">
+      <button id="autoGroupBtn" class="auto-group-btn">🧲 Auto-Group Tabs</button>
+      <button id="undoGroupBtn" class="undo-group-btn" hidden>↩ Undo</button>
+    </div>
+
+    <div class="options-panel" id="featureOptionsPanel">
+      <div class="option-row">
+        <span class="option-title">Auto-Group Tabs</span>
+        <label class="toggle-switch" for="toggleAutoGroupTabs">
+          <input type="checkbox" id="toggleAutoGroupTabs" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      <div class="option-row">
+        <span class="option-title">Session Intelligence</span>
+        <label class="toggle-switch" for="toggleSessionIntelligence">
+          <input type="checkbox" id="toggleSessionIntelligence" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="neon-divider"></div>
+
+    <div class="sessions-header">
+      <h3>Recent Sessions</h3>
+      <span class="sessions-count" id="sessionsCount">0</span>
+    </div>
+
+    <div id="sessions"></div>
+
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
